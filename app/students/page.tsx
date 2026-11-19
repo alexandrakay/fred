@@ -1,10 +1,11 @@
+import { pageMeta } from '@/lib/seo';
 import Reveal from '@/components/Reveal';
 import PageHero from '@/components/PageHero';
 import Placeholder from '@/components/Placeholder';
 import StoryGrid from './StoryGrid';
 import StoryButton from '@/components/StoryButton';
 
-export const metadata = { title: 'Student Success | Frederique Bruell Golf' };
+export const metadata = pageMeta({ title: 'Student Success Stories', description: "Junior golfers earning team spots, adults playing better, and golfers who kept playing. Stories from Frederique Bruell's students.", path: '/students' });
 
 export default function Students() {
   const facts = [['Starting point', 'To be confirmed with Zooey and her family'], ['Approach', 'Development, preparation, and confidence'], ['Outcome', "A place on Viera High School's top team"]];

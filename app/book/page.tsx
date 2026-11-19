@@ -1,7 +1,8 @@
+import { pageMeta } from '@/lib/seo';
 import { Suspense } from 'react';
 import BookForm from './BookForm';
 
-export const metadata = { title: 'Book a Lesson | Frederique Bruell Golf' };
+export const metadata = pageMeta({ title: 'Book a Golf Lesson', description: 'Book a golf lesson with Frederique Bruell in Melbourne, Merritt Island, Brevard County, or Seminole County, FL.', path: '/book' });
 
 const steps = ['Send an inquiry with a little about your game.', 'Frederique replies to find a time and location.', 'Your first lesson starts with a conversation.'];
 

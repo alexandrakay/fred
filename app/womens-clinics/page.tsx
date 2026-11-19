@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import { pageMeta } from '@/lib/seo';
 import Reveal from '@/components/Reveal';
 import Placeholder from '@/components/Placeholder';
 import ClinicList from './ClinicList';
 
-export const metadata = { title: "Women's Golf Clinics | Frederique Bruell Golf" };
+export const metadata = pageMeta({ title: "Women's Golf Clinics", description: "Women's golf clinics in Melbourne, FL for every skill level. Improve your game, meet other women who play, and build confidence.", path: '/womens-clinics' });
 
 const expect = [
   { t: 'Every skill level', b: 'Beginners and experienced players welcome in every clinic.' },

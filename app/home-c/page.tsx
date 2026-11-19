@@ -1,8 +1,11 @@
 import Link from 'next/link';
+import { pageMeta } from '@/lib/seo';
 import Reveal from '@/components/Reveal';
 import RotatingWord from '@/components/RotatingWord';
 import Placeholder from '@/components/Placeholder';
 import { credentials, programs, msQuote, manifesto, clinics } from '@/lib/content';
+
+export const metadata = pageMeta({ title: 'Golf Lessons in Melbourne, FL', description: 'Design version 5c of the Frederique Bruell Golf home page.', path: '/', noindex: true });
 
 const bod: React.CSSProperties = { fontFamily: 'var(--font-bodoni)', fontWeight: 400 };
 const all: React.CSSProperties = { fontFamily: 'var(--font-allura)', fontWeight: 400 };

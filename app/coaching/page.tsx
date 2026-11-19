@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { pageMeta } from '@/lib/seo';
 import Reveal from '@/components/Reveal';
 import PageHero from '@/components/PageHero';
 import Placeholder from '@/components/Placeholder';
 import { programs } from '@/lib/content';
 
-export const metadata = { title: 'Coaching & Instruction | Frederique Bruell Golf' };
+export const metadata = pageMeta({ title: 'Golf Coaching & Instruction', description: "Private lessons, beginner development, competitive junior and adult coaching, women's golf, and group instruction in Brevard County, FL.", path: '/coaching' });
 
 const steps = [
   { t: 'Conversation', b: 'Your experience, goals, and anything about how your body moves that Frederique should know.' },

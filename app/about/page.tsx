@@ -1,12 +1,10 @@
 import Link from 'next/link';
+import { pageMeta } from '@/lib/seo';
 import Reveal from '@/components/Reveal';
 import Placeholder from '@/components/Placeholder';
 import { principles } from '@/lib/content';
 
-export const metadata = {
-  title: 'About Frederique | Frederique Bruell Golf',
-  description: 'Former Elon University Division I captain, 2008 Women\'s Ohio State Amateur Champion, and Melbourne, FL golf instructor.',
-};
+export const metadata = pageMeta({ title: 'About Frederique Bruell', description: "Former Elon University Division I captain and 2008 Women's Ohio State Amateur Champion, now coaching golfers in Melbourne, FL.", path: '/about' });
 
 // Draft timeline: dates and wording to confirm with Frederique
 const career = [

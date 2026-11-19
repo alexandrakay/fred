@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AccentSwitch from '@/components/AccentSwitch';
 import MockNote from '@/components/MockNote';
+import { SITE_URL, SITE_NAME } from '@/lib/seo';
 import './globals.css';
 
 const script = Pinyon_Script({ weight: '400', subsets: ['latin'], variable: '--font-script' });
@@ -17,8 +18,23 @@ const allura = Allura({ weight: '400', subsets: ['latin'], variable: '--font-all
 const inst = Instrument_Sans({ subsets: ['latin'], variable: '--font-inst' });
 
 export const metadata: Metadata = {
-  title: 'Frederique Bruell Golf | Golf Lessons in Melbourne, FL',
+  metadataBase: new URL(SITE_URL),
+  title: { default: 'Frederique Bruell Golf | Golf Lessons in Melbourne, FL', template: '%s | ' + SITE_NAME },
+  openGraph: { siteName: SITE_NAME, type: 'website', locale: 'en_US' },
+  twitter: { card: 'summary_large_image' },
   description: 'Individualized golf instruction in Melbourne, Brevard County, and Seminole County. Private lessons, competitive junior and adult coaching, and women\'s clinics.',
+};
+
+// Local business structured data for search; only facts already public on her site and in the PRD
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SportsActivityLocation',
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: 'Individualized golf instruction for juniors, adults, competitors, and women.',
+  areaServed: ['Melbourne, FL', 'Merritt Island, FL', 'Brevard County, FL', 'Seminole County, FL'],
+  sameAs: ['https://www.instagram.com/frederiquebruell'],
+  founder: { '@type': 'Person', name: 'Frederique Bruell', jobTitle: 'Golf Instructor', alumniOf: 'Elon University' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -26,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={fonts} data-accent="blush">
       <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
         <MockNote />
         <Header />
         <main>{children}</main>

@@ -1,9 +1,12 @@
 import Link from 'next/link';
+import { pageMeta } from '@/lib/seo';
 import Reveal from '@/components/Reveal';
 import RotatingWord from '@/components/RotatingWord';
 import Placeholder from '@/components/Placeholder';
 import VideoButton from '@/components/VideoButton';
 import { credentials, principles, programs, msQuote } from '@/lib/content';
+
+export const metadata = pageMeta({ title: 'Golf Lessons in Melbourne, FL', description: "Individualized golf lessons in Melbourne, FL from a former Division I captain. Private, junior, adult, and women's coaching in Brevard County.", path: '/' });
 
 export default function HomeA() {
   return (
